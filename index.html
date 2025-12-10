@@ -7,14 +7,12 @@
 
   <style>
     :root {
-      --bg: #e7edf6;
-      --card-bg: #ffffff;
-      --primary: #1f5f8b;
-      --primary-soft: #e2eef7;
-      --text-main: #1a2733;
-      --text-muted: #6b7a8a;
-      --border-soft: #dde3eb;
-      --whatsapp: #128c7e;
+      --bg-dark: #0e1117;
+      --card-dark: #1a1f27;
+      --primary: #3b82f6;
+      --whatsapp: #22c35e;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
     }
 
     * {
@@ -24,8 +22,7 @@
 
     body {
       margin: 0;
-      background:
-        radial-gradient(circle at top, #ffffff 0, #e7edf6 45%, #d8e0ee 100%);
+      background: radial-gradient(circle at top, #1c2430 0%, #0e1117 60%, #07090d 100%);
       color: var(--text-main);
       min-height: 100vh;
       display: flex;
@@ -40,16 +37,13 @@
     }
 
     .card {
-      background: var(--card-bg);
+      background: var(--card-dark);
       border-radius: 22px;
-      padding: 26px 20px 22px;
-      box-shadow:
-        0 18px 45px rgba(15, 23, 42, 0.16),
-        0 1px 0 rgba(255, 255, 255, 0.9);
-      border: 1px solid var(--border-soft);
+      padding: 28px 20px;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.45);
+      border: 1px solid rgba(255,255,255,0.06);
     }
 
-    /* ===== أعلى الكارت (الصورة + الاسم) ===== */
     .header {
       display: flex;
       align-items: center;
@@ -58,13 +52,12 @@
     }
 
     .avatar-photo {
-      width: 64px;
-      height: 64px;
+      width: 70px;
+      height: 70px;
       border-radius: 50%;
       overflow: hidden;
-      border: 2px solid var(--primary-soft);
-      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.20);
-      background: #dfe7f3;
+      border: 2px solid #3b82f6;
+      box-shadow: 0 6px 16px rgba(59,130,246,0.25);
       flex-shrink: 0;
     }
 
@@ -72,141 +65,91 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
-    }
-
-    .name-job {
-      flex: 1;
     }
 
     .name-line {
-      font-size: 19px;
+      font-size: 20px;
       font-weight: 700;
-      letter-spacing: 0.06em;
       text-transform: uppercase;
-      margin-bottom: 4px;
     }
 
     .job-line {
       font-size: 13px;
       color: var(--text-muted);
-      letter-spacing: 0.16em;
       text-transform: uppercase;
+      margin-top: 4px;
     }
 
     .divider {
       height: 1px;
-      background: linear-gradient(to right, transparent, #d6dde7, transparent);
-      margin: 16px 0 18px;
+      background: linear-gradient(to right, transparent, #2d333b, transparent);
+      margin: 20px 0;
     }
 
     .section-title {
       font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.20em;
       color: var(--text-muted);
-      margin-bottom: 12px;
+      letter-spacing: 0.15em;
+      margin-bottom: 10px;
     }
 
     .info-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 0 6px;
-      font-size: 14px;
-    }
-
-    .info-label {
-      color: var(--text-muted);
-      font-size: 13px;
+      text-align: center;
+      font-size: 16px;
+      margin-bottom: 10px;
     }
 
     .info-value {
+      margin-top: 4px;
+      font-size: 18px;
       font-weight: 600;
-      color: var(--text-main);
-      font-size: 15px;
     }
 
-    /* ===== الأزرار + الإضاءة تحتها ===== */
+    /* Buttons centered */
     .actions {
-      margin-top: 22px;
+      margin-top: 24px;
       display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      position: relative;
-    }
-
-    .btn-wrap {
-      position: relative;
-      flex: 1;
-      min-width: 150px;
-    }
-
-    .btn-glow {
-      position: absolute;
-      left: 10%;
-      right: 10%;
-      bottom: -5px;
-      height: 12px;
-      border-radius: 999px;
-      filter: blur(8px);
-      z-index: 0;
-      opacity: 0.55;
-    }
-
-    .btn-glow.primary {
-      background: rgba(31, 95, 139, 0.55);
-    }
-
-    .btn-glow.whatsapp {
-      background: rgba(18, 140, 126, 0.55);
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
     }
 
     .btn {
-      position: relative;
-      z-index: 1;
-      width: 100%;
+      width: 70%;
+      max-width: 260px;
       border-radius: 999px;
-      padding: 11px 14px;
-      font-size: 14px;
+      padding: 12px 16px;
+      font-size: 16px;
       font-weight: 600;
-      border: none;
-      outline: none;
-      cursor: pointer;
+      color: white;
       text-decoration: none;
       text-align: center;
-      display: inline-flex;
-      align-items: center;
+      transition: 0.2s;
+      display: flex;
       justify-content: center;
+      align-items: center;
       gap: 6px;
-      transition: background 0.15s ease, box-shadow 0.15s ease,
-                  transform 0.10s ease;
     }
 
-    .btn-primary {
-      background: var(--primary);
-      color: #ffffff;
-      box-shadow: 0 10px 20px rgba(31, 95, 139, 0.38);
+    .btn-call {
+      background: #3b82f6;
+      box-shadow: 0 8px 20px rgba(59,130,246,0.45);
     }
 
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 13px 26px rgba(31, 95, 139, 0.48);
+    .btn-call:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(59,130,246,0.55);
     }
 
     .btn-whatsapp {
-      background: var(--whatsapp);
-      color: #ffffff;
-      box-shadow: 0 10px 20px rgba(18, 140, 126, 0.40);
+      background: #22c35e;
+      box-shadow: 0 8px 20px rgba(34,195,94,0.45);
     }
 
     .btn-whatsapp:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 13px 26px rgba(18, 140, 126, 0.55);
-    }
-
-    .btn-icon {
-      font-size: 16px;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(34,195,94,0.55);
     }
 
     .footer-note {
@@ -215,79 +158,49 @@
       color: var(--text-muted);
       text-align: center;
     }
-
-    @media (max-width: 480px) {
-      body {
-        align-items: flex-start;
-      }
-      .page-wrapper {
-        margin-top: 20px;
-      }
-      .card {
-        padding: 24px 16px 20px;
-      }
-      .name-line {
-        font-size: 18px;
-      }
-      .job-line {
-        font-size: 12px;
-      }
-      .info-value {
-        font-size: 14px;
-      }
-    }
   </style>
 </head>
 <body>
 
   <div class="page-wrapper">
     <div class="card">
+
       <div class="header">
-        <!-- صورة البروفايل – غيّر الرابط لو حبيت -->
         <div class="avatar-photo">
+          
           <img src="logo/baba.jpeg" alt="Profile Photo">
         </div>
 
-        <div class="name-job">
+        <div>
           <div class="name-line">ENG. Mohamed Ragheb</div>
-          <div class="job-line">Professional Engineer</div>
+          <div class="job-line"> Engineer</div>
         </div>
       </div>
 
       <div class="divider"></div>
 
-      <div class="section-title">Contact</div>
+      <div class="section-title">.</div>
 
       <div class="info-row">
-        <div class="info-label">.</div>
-        <div class="info-value">.</div>
+        <div class="info-value"></div>
       </div>
 
       <div class="actions">
-        <!-- زر الاتصال -->
-        <div class="btn-wrap">
-          <div class="btn-glow primary"></div>
-          <a class="btn btn-primary" href="tel:0592591524">
-            <span class="btn-icon"></span>
-            <span>Call Now</span>
-          </a>
-        </div>
 
-        <!-- زر واتساب -->
-        <div class="btn-wrap">
-          <div class="btn-glow whatsapp"></div>
-          <a class="btn btn-whatsapp"
-             href="https://wa.me/966592591524"
-             target="_blank">
-            <span class="btn-icon"></span>
-            <span>WhatsApp</span>
-          </a>
-        </div>
+       
+        <a class="btn btn-call" href="tel:0592591524">
+           Call Now
+        </a>
+
+    
+        <a class="btn btn-whatsapp" href="https://wa.me/966592591524" target="_blank">
+           WhatsApp
+        </a>
+
       </div>
 
-      <div class="footer-note">
-        Personal business card 
-      </div>
+      <div class="footer-note"> . </div>
+
     </div>
   </div>
 
